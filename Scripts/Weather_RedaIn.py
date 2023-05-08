@@ -187,8 +187,8 @@ def process_temp_df(data_dfs):
 
 
 def merge_dataframes(temp_df, grouped_weather_df, precip_df):
-    merged_df = temp_df.merge(grouped_weather_df, left_index=True, right_index=True, how='outer')
-    merged_df = merged_df.merge(precip_df, left_index=True, right_index=True, how='outer')
+    merged_df = temp_df.merge(grouped_weather_df, left_index=True, right_index=True, how='inner')
+    merged_df = merged_df.merge(precip_df, left_index=True, right_index=True, how='inner')
     return merged_df
 
 
@@ -248,16 +248,20 @@ def process_and_merge_dataframes(year: int, metadata_df: pd.DataFrame) -> pd.Dat
             }
             data_dfs = load_data_dfs(file_locations, year)
 
-            if data_dfs:
-                grouped_weather_df = process_weather_df(data_dfs)
-                precip_df = process_precip_df(data_dfs)
-                temp_df = process_temp_df(data_dfs)
+            try:
+                if data_dfs:
+                    grouped_weather_df = process_weather_df(data_dfs)
+                    precip_df = process_precip_df(data_dfs)
+                    temp_df = process_temp_df(data_dfs)
 
-                merged_df = merge_dataframes(temp_df, grouped_weather_df, precip_df)
-                merged_df = apply_weather_classification(merged_df)
+                    merged_df = merge_dataframes(temp_df, grouped_weather_df, precip_df)
+                    merged_df = apply_weather_classification(merged_df)
 
-                merged_df_ = keep_required_columns(merged_df, row)
-                all_merged_df = pd.concat([all_merged_df, merged_df_], ignore_index=True)
+                    merged_df_ = keep_required_columns(merged_df, row)
+                    all_merged_df = pd.concat([all_merged_df, merged_df_], ignore_index=True)
+            except (TypeError, AttributeError):
+                pass
+
 
             processed_stations += 1
             print(f"Processed {processed_stations} of {total_stations} stations")
