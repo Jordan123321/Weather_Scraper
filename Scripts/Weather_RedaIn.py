@@ -266,6 +266,7 @@ def keep_required_columns(merged_df: pd.DataFrame, row: pd.Series) -> pd.DataFra
     merged_df["station_name"] = station_name
 
     columns_to_keep = [
+        "date",
         "station_latitude",
         "station_longitude",
         "weather_classifier",
@@ -275,6 +276,7 @@ def keep_required_columns(merged_df: pd.DataFrame, row: pd.Series) -> pd.DataFra
     merged_df_ = merged_df[columns_to_keep]
 
     return merged_df_
+
 
 def merge_dataframes(temp_df: Optional[pd.DataFrame], grouped_weather_df: Optional[pd.DataFrame], precip_df: Optional[pd.DataFrame]) -> Optional[pd.DataFrame]:
     """
@@ -293,6 +295,9 @@ def merge_dataframes(temp_df: Optional[pd.DataFrame], grouped_weather_df: Option
     merged_df = dataframes[0]
     for df in dataframes[1:]:
         merged_df = merged_df.merge(df, left_index=True, right_index=True, how='outer')
+
+    # Reset the index and rename it to 'date'
+    merged_df = merged_df.reset_index().rename(columns={'index': 'date'})
 
     return merged_df
 
