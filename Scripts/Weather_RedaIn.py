@@ -4,7 +4,7 @@ import os
 import sys
 import pandas as pd
 import io
-from typing import Optional
+from typing import Optional, Tuple, Dict, Any
 
 # Get the current working directory and its parent directory
 PATH1 = os.getcwd()
@@ -42,43 +42,235 @@ def read_csv_data(file: str) -> pd.DataFrame:
         elif 'data' == line.strip():
             start_data = True
 
-    return pd.read_csv(io.StringIO(''.join(data_lines)), header=None)
+    df = pd.read_csv(io.StringIO(''.join(data_lines)))
+    if 'ob_end_time' in df.columns:
+        df['ob_end_time'] = pd.to_datetime(df['ob_end_time'])
+        df['date'] = df['ob_end_time'].dt.date
+    return df
 
 
-if __name__ == "__main__":
-    # Commented out the command-line argument and set year to 2019 for testing
-    # if len(sys.argv) < 2:
-    #     print("Usage: python script_name.py [year]")
-    #     sys.exit(1)
+def classify_weather(row: pd.Series) -> Tuple[str, str]:
+    """
+    Classify the weather and temperature for a given row of data.
 
-    # year = int(sys.argv[1])
-    year = 2019
+    :param row: A row from the processed DataFrame.
+    :return: A tuple containing the weather classifier and the temperature classifier.
+    """
+    # Weather classification
+    weather = ""
+    if row["prcp_amt"] < 1.0:
+        weather = "Dry"
+    elif row["prcp_amt"] < 2.5:
+        weather = "Drizzle"
+    elif row["prcp_amt"] < 7.5:
+        weather = "Mild Rain"
+    else:
+        weather = "Heavy Rain"
 
-    # Read the processed stations metadata DataFrame
-    df = read_metadata()
+    if (
+        (row["snow_day_id"] >= 1 and row["snow_day_id"] <= 6)
+        or (
+            (row["min_air_temp"] <= 0 and row["prcp_amt"] > 0)
+            or (row["min_grss_temp"] <= 0 and row["prcp_amt"] > 0)
+        )
+        and row["snow_depth"] > 0
+    ):
+        weather = "Snowy"
 
-    # Process the first matching CSV file
-    for _, row in df.iterrows():
+    if row["hail_day_id"] >= 1 and row["hail_day_id"] <= 6:
+        weather = "Hail"
+
+    if row["thunder_day_flag"] >= 1 and row["thunder_day_flag"] <= 6:
+        weather = "Thunderstorm"
+
+    if row["gale_day_flag"] >= 1 and row["gale_day_flag"] <= 6:
+        weather = "Gale"
+
+    # Temperature classification
+    temp_category = ""
+    if row["min_air_temp"] <= -5:
+        temp_category = "Freezing"
+    elif row["max_air_temp"] <= 5:
+        temp_category = "Cold"
+    elif row["max_air_temp"] <= 15:
+        temp_category = "Cool"
+    elif row["max_air_temp"] <= 25:
+        temp_category = "Mild"
+    else:
+        temp_category = "Hot"
+
+    return weather, temp_category
+
+
+def load_data_dfs(file_locations: Dict[str, str], year: int) -> Dict[str, pd.DataFrame]:
+    """
+    Load data DataFrames from the provided file locations and year.
+
+    :param file_locations: A dictionary containing the file locations for temperature, weather, and precipitation data.
+    :type file_locations: Dict[str, str]
+    :param year: The year for which the data needs to be loaded.
+    :type year: int
+    :return: A dictionary containing the loaded DataFrames.
+    :rtype: Dict[str, pd.DataFrame]
+    """
+    if not isinstance(file_locations, dict):
+        raise ValueError("file_locations must be a dictionary")
+
+    if not isinstance(year, int):
+        raise ValueError("year must be an integer")
+
+    data_dfs = {}
+    for data_type, file_location in file_locations.items():
+        if file_location:
+            csv_file = find_csv_in_file_location(file_location, year)
+            if csv_file:
+                data_df = read_csv_data(csv_file)
+                data_dfs[data_type] = data_df
+    return data_dfs
+
+
+def process_weather_df(data_dfs: Dict[str, pd.DataFrame]) -> Optional[pd.DataFrame]:
+    """
+    Process the weather DataFrame.
+
+    :param data_dfs: A dictionary containing the loaded DataFrames.
+    :type data_dfs: Dict[str, pd.DataFrame]
+    :return: The processed weather DataFrame or None if not available.
+    :rtype: Optional[pd.DataFrame]
+    """
+    if not isinstance(data_dfs, dict):
+        raise ValueError("data_dfs must be a dictionary")
+
+    if "weather" not in data_dfs:
+        return None
+
+    weather_df = data_dfs["weather"]
+    weather_df["date"] = pd.to_datetime(weather_df["date"])
+
+    quality_flag_columns = [col for col in weather_df.columns if col.endswith('_q')]
+    columns_to_drop = ["id", "ob_hour_count", "version_num", "src_id", "rec_st_ind", "ob_end_time", "midas_stmp_etime"] + quality_flag_columns
+    weather_df = weather_df.drop(columns=columns_to_drop)
+
+    grouped_weather_df = weather_df.groupby("date").mean(numeric_only=False)
+    grouped_weather_df = grouped_weather_df.reset_index().set_index("date")
+
+    return grouped_weather_df
+
+def process_precip_df(data_dfs):
+    if "precip" not in data_dfs:
+        return None
+
+    precip_df = data_dfs["precip"]
+    precip_df["ob_date"] = pd.to_datetime(precip_df["ob_date"]).dt.date
+    precip_df = precip_df.set_index("ob_date")
+
+    columns_to_drop = ["id", "id_type", "version_num", "met_domain_name", "ob_end_ctime", "ob_day_cnt", "src_id", "ob_day_cnt_q", "meto_stmp_time", "midas_stmp_etime", "prcp_amt_j", "prcp_amt_q", "rec_st_ind"]
+    precip_df = precip_df.drop(columns=columns_to_drop)
+
+    return precip_df
+
+
+def process_temp_df(data_dfs):
+    if "temp" not in data_dfs:
+        return None
+
+    temp_df = data_dfs["temp"]
+    temp_df["date"] = pd.to_datetime(temp_df["date"])
+    temp_df = temp_df.set_index("date")
+
+    columns_to_drop = ["ob_end_time", "id_type", "id", "ob_hour_count", "version_num", "met_domain_name", "src_id", "rec_st_ind",
+                       "meto_stmp_time", "midas_stmp_etime", "max_air_temp_q", "min_air_temp_q", "min_grss_temp_q",
+                       "min_conc_temp_q", "max_air_temp_j", "min_air_temp_j", "min_grss_temp_j", "min_conc_temp_j"]
+    temp_df = temp_df.drop(columns=columns_to_drop)
+
+    return temp_df
+
+
+def merge_dataframes(temp_df, grouped_weather_df, precip_df):
+    merged_df = temp_df.merge(grouped_weather_df, left_index=True, right_index=True, how='outer')
+    merged_df = merged_df.merge(precip_df, left_index=True, right_index=True, how='outer')
+    return merged_df
+
+
+def apply_weather_classification(merged_df):
+    merged_df["weather_classifier"], merged_df["temp_category"] = zip(*merged_df.apply(classify_weather, axis=1))
+    return merged_df
+
+
+def keep_required_columns(merged_df, row):
+    station_latitude = row["station_latitude"]
+    station_longitude = row["station_longitude"]
+    station_name = row["station_name"]
+
+    merged_df["station_latitude"] = station_latitude
+    merged_df["station_longitude"] = station_longitude
+    merged_df["station_name"] = station_name
+
+    columns_to_keep = [
+        "station_latitude",
+        "station_longitude",
+        "weather_classifier",
+        "temp_category",
+        "station_name",
+    ]
+    merged_df_ = merged_df[columns_to_keep]
+
+    return merged_df_
+
+
+def process_and_merge_dataframes(year: int, metadata_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Process and merge the data for the given year and metadata DataFrame.
+
+    :param year: The year for which the data needs to be processed and merged.
+    :type year: int
+    :param metadata_df: The metadata DataFrame containing station information.
+    :type metadata_df: pd.DataFrame
+    :return: The merged DataFrame containing the weather and temperature data for the given year and metadata.
+    :rtype: pd.DataFrame
+    """
+    if not isinstance(year, int):
+        raise ValueError("year must be an integer")
+
+    if not isinstance(metadata_df, pd.DataFrame):
+        raise ValueError("metadata_df must be a pandas DataFrame")
+
+    all_merged_df = pd.DataFrame(columns=["station_latitude", "station_longitude", "weather_classifier", "temp_category", "station_name"])
+    total_stations = len(metadata_df)
+    processed_stations = 0
+
+    for _, row in metadata_df.iterrows():
         if row['first_year'] <= year <= row['last_year']:
             file_locations = {
                 "temp": row["file_location_temp"],
                 "weather": row["file_location_weather"],
                 "precip": row["file_location_precip"],
             }
-
-            data_dfs = {}
-
-            for data_type, file_location in file_locations.items():
-                if file_location:
-                    csv_file = find_csv_in_file_location(file_location, year)
-                    if csv_file:
-                        data_df = read_csv_data(csv_file)
-                        data_dfs[data_type] = data_df
+            data_dfs = load_data_dfs(file_locations, year)
 
             if data_dfs:
-                # Print the first few rows of each DataFrame
-                for data_type, data_df in data_dfs.items():
-                    print(f"Data Type: {data_type}")
-                    print(data_df.head())
-                    print()
-                break
+                grouped_weather_df = process_weather_df(data_dfs)
+                precip_df = process_precip_df(data_dfs)
+                temp_df = process_temp_df(data_dfs)
+
+                merged_df = merge_dataframes(temp_df, grouped_weather_df, precip_df)
+                merged_df = apply_weather_classification(merged_df)
+
+                merged_df_ = keep_required_columns(merged_df, row)
+                all_merged_df = pd.concat([all_merged_df, merged_df_], ignore_index=True)
+
+            processed_stations += 1
+            print(f"Processed {processed_stations} of {total_stations} stations")
+
+    return all_merged_df
+
+
+
+if __name__ == "__main__":
+    year = 2019
+    metadata_df = read_metadata()
+    all_merged_df = process_and_merge_dataframes(year, metadata_df)
+
+    output_file_path = os.path.join(PROCESSED_DATA_DIR, f"Weather_Classified_{year}.csv")
+    all_merged_df.to_csv(output_file_path, index=False)
+    print(f"Saved all_merged_df to {output_file_path}")
