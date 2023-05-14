@@ -153,5 +153,5 @@ cython_debug/
 
 # Ignore raw_data folder as it contains large files not needed in the repository
 raw_data/
-
+raw_police_data/
 
