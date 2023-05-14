@@ -1,19 +1,24 @@
 #!/usr/bin/env python3
 """
-This script reads metadata CSV files from three directories, merges them to find the intersection
-of stations based on their src_id, and adds the file location columns for each type of weather data
-(temperature, general weather, and precipitation). The merged DataFrame is saved as a new CSV file
-in the 'Processed_Data' directory.
+Metadata Processing Script
 
-Functions:
-find_metadata_csv(directory: str) -> Optional[str]: Find the metadata CSV file in the specified directory.
-read_metadata(file: str) -> pd.DataFrame: Read the metadata CSV file and return it as a DataFrame.
-check_location_exists(row: pd.Series, directory: str) -> Union[str, None]: Check if the folder exists and return the folder location if it exists, otherwise return None.
-intersection_dataframes(df0: pd.DataFrame, df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame: Find the intersection of the three DataFrames based on their index and add the file location columns.
-save_merged_dataframe(df: pd.DataFrame): Save the merged DataFrame.
+This script processes metadata CSV files from different directories and merges them into a single DataFrame.
+The output DataFrame contains station information, including file locations for temperature, weather, and precipitation data.
+
+The script takes the following steps:
+
+1. Read the metadata CSV files from the specified directories.
+2. Find the intersection of the three DataFrames based on their index and add the file location columns.
+3. Save the merged DataFrame to a CSV file.
+
+Usage:
+python metadata_processing.py
+
+Dependencies:
+os, sys, io, pandas, typing, pathlib
 """
 
-#!/usr/bin/env python3
+
 
 import os
 import sys
@@ -91,7 +96,7 @@ def check_location_exists(row: pd.Series, directory: str) -> Union[str, None]:
     else:
         print(f"Folder not found: {directory}/{partial_location}")
         return None
-    
+
 def intersection_dataframes(df0: pd.DataFrame, df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
     """Find the intersection of the three DataFrames based on their index and add the file location columns."""
     df1 = df1.drop(columns=['station_name', 'station_file_name', 'historic_county',
@@ -121,9 +126,9 @@ def save_merged_dataframe(df: pd.DataFrame):
 
     output_file = os.path.join(output_directory, 'processed_stations_metadata.csv')
     df.to_csv(output_file)
-    
-    
-    
+
+
+
 if __name__ == "__main__":
     # Read metadata CSVs
     metadata_file0 = find_metadata_csv(DIRECTORY0)

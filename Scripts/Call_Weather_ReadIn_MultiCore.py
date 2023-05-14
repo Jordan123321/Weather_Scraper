@@ -1,8 +1,15 @@
+#!/usr/bin/env python3
 """
-Summary:
-This script processes and merges weather data files for the years 1900-2022 using the Weather_ReadIn.py script.
-It runs the Weather_ReadIn.py script in parallel using multiprocessing, utilizing one less core than the maximum core count.
-It prints the processing time for each year in real time.
+Weather ReadIn Runner Script
+
+This script runs the Weather_ReadIn.py script for multiple years concurrently using a ProcessPoolExecutor.
+It provides a way to process weather data for multiple years in parallel and print the results.
+
+Usage:
+python weather_readin_runner.py
+
+Dependencies:
+os, subprocess, time, concurrent.futures
 """
 
 import os
@@ -45,7 +52,7 @@ if __name__ == "__main__":
     script_path = os.path.join(os.getcwd(), "Station_ReadIn.py")
     subprocess.run(["python", script_path])
     num_cores = os.cpu_count() - 1
-    years = range(1900, 2023)
+    years = range(1900, 2022)
 
     # Create a ProcessPoolExecutor with a specified number of worker processes.
     with ProcessPoolExecutor(max_workers=num_cores) as executor:
