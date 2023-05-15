@@ -1,30 +1,35 @@
 #!/usr/bin/env python3
 """
-Weather Data Processing Script
+This script processes and merges weather data for a given year. It reads metadata from a processed_stations_metadata.csv file
+and retrieves the file locations for temperature, weather, and precipitation data. The script loads the data files for the specified year,
+processes the temperature, weather, and precipitation DataFrames, and merges them into a single DataFrame. The script also applies weather
+classification to the merged DataFrame based on various attributes and calculates the aggregated monthly weather data.
 
-This script processes weather data from various sources and combines them into a single Pandas DataFrame.
-The output DataFrame contains weather classification, temperature categories, sunshine type, and station information for the specified year.
+The script consists of the following main functions:
+- aggregate_monthly_weather_data: Aggregates the raw weather features on a monthly basis (mean).
+- read_metadata: Reads the processed_stations_metadata.csv file.
+- find_csv_in_file_location: Finds the CSV file with the specified year in the file location.
+- read_csv_data: Reads the CSV file data between 'data' and 'end data' entries.
+- classify_weather: Classifies the weather, temperature category, and sunshine type for a given row of data.
+- apply_weather_classification: Applies the weather classification to the merged DataFrame.
+- classify_weather_condition: Classifies the weather condition for a given row of data.
+- classify_temp_category: Classifies the temperature category for a given row of data.
+- classify_sunshine_type: Classifies the sunshine type for a given row of data.
+- load_data_dfs: Loads data DataFrames from the provided file locations and year.
+- process_weather_df: Processes the weather DataFrame by selecting only the numeric columns, excluding the 'date' column, and grouping by the 'date' column and calculating the mean.
+- process_precip_df: Processes the precipitation DataFrame if present in the data_dfs dictionary.
+- process_temp_df: Processes the temperature DataFrame if present in the data_dfs dictionary.
+- keep_required_columns: Keeps only the required columns in the merged DataFrame.
+- merge_dataframes: Merges the temperature, grouped_weather, and precipitation DataFrames.
+- process_and_merge_dataframes: Processes and merges the data for the given year and metadata DataFrame.
 
-The script takes the following steps:
+The script also includes a main block that parses the command-line arguments, reads the metadata, processes and merges the data, and saves the results to CSV files.
 
-1. Read metadata for weather stations.
-2. For each station, load temperature, weather, and precipitation data for the specified year.
-3. Process the loaded data by cleaning, aggregating, and calculating relevant features.
-4. Merge the processed DataFrames and apply weather classification.
-5. Keep only the required columns in the merged DataFrame.
-6. Concatenate the results for all stations into a single DataFrame.
-7. Save the final DataFrame to a CSV file.
+To use the script, run it from the command line with the desired year as the argument. The script will process and merge the weather data for the specified year
+using the metadata and save the results to CSV files.
 
-Usage:
-python weather_data_processing.py <year>
-
-Arguments:
-<year> The year for which to process the data (e.g., 2019)
-
-Dependencies:
-pandas, numpy, os, io, sys, argparse, typing
+Example usage: python Weather_ReadIn.py 2022
 """
-
 
 import os
 import pandas as pd
@@ -38,6 +43,18 @@ from typing import Optional, Tuple, Dict
 PATH1 = os.getcwd()
 PATH0 = os.path.dirname(PATH1)
 PROCESSED_DATA_DIR = os.path.join(PATH0, 'Processed_Data')
+
+
+def aggregate_monthly_weather_data(weather_data_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Aggregate the raw weather features on a monthly basis (mean).
+
+    :param weather_data_df: The raw weather data DataFrame.
+    :return: The aggregated weather data DataFrame on a monthly cadence.
+    """
+    weather_data_df["date"] = pd.to_datetime(weather_data_df["date"])
+    monthly_weather_data_df = weather_data_df.resample('M', on='date').mean().reset_index()
+    return monthly_weather_data_df
 
 
 def read_metadata() -> pd.DataFrame:
@@ -441,8 +458,8 @@ def process_and_merge_dataframes(year: int, metadata_df: pd.DataFrame) -> Tuple[
     :param metadata_df: The metadata DataFrame containing station information.
     :type metadata_df: pd.DataFrame
     :return: The merged DataFrame containing the weather and temperature data for the given year and metadata,
-             and the DataFrame with all columns merged.
-    :rtype: Tuple[pd.DataFrame, pd.DataFrame]
+             the DataFrame with all columns merged, and the aggregated monthly weather data.
+    :rtype: Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]
     """
     if not isinstance(year, int):
         raise ValueError("year must be an integer")
@@ -456,6 +473,19 @@ def process_and_merge_dataframes(year: int, metadata_df: pd.DataFrame) -> Tuple[
     ])
 
     full_weather_data_df = pd.DataFrame(columns=[
+        "date", "station_name", "station_latitude", "station_longitude", "weather_classifier", "temp_category",
+        "sunshine_type", "max_air_temp", "min_air_temp", "min_grss_temp", "min_conc_temp", "cs_24hr_sun_dur",
+        "wmo_24hr_sun_dur", "conc_state_id", "lying_snow_flag", "snow_depth", "frsh_snw_amt", "snow_day_id",
+        "hail_day_id", "thunder_day_flag", "gale_day_flag", "frsh_mnt_snwfall_flag", "drv_24hr_sun_dur",
+        "lying_snow_ht", "prcp_amt"
+    ])
+
+    monthly_weather_data_df = pd.DataFrame(columns=[
+        "date", "station_name", "station_latitude", "station_longitude", "weather_classifier", "temp_category",
+        "sunshine_type"
+    ])
+
+    monthly_full_weather_data_df = pd.DataFrame(columns=[
         "date", "station_name", "station_latitude", "station_longitude", "weather_classifier", "temp_category",
         "sunshine_type", "max_air_temp", "min_air_temp", "min_grss_temp", "min_conc_temp", "cs_24hr_sun_dur",
         "wmo_24hr_sun_dur", "conc_state_id", "lying_snow_flag", "snow_depth", "frsh_snw_amt", "snow_day_id",
@@ -481,16 +511,31 @@ def process_and_merge_dataframes(year: int, metadata_df: pd.DataFrame) -> Tuple[
                 temp_df = process_temp_df(data_dfs)
 
                 merged_df = merge_dataframes(temp_df, grouped_weather_df, precip_df)
+
+
                 if merged_df is not None:
+                    monthly_aggregated_df = merged_df.resample('M', on='date').mean().reset_index()
                     merged_df = apply_weather_classification(merged_df)
                     merged_df_, merged_df = keep_required_columns(merged_df, row)
                     weather_data_df = pd.concat([weather_data_df, merged_df], ignore_index=True)
                     full_weather_data_df = pd.concat([full_weather_data_df, merged_df_], ignore_index=True)
 
+                    if monthly_aggregated_df is not None:
+                        monthly_aggregated_df = apply_weather_classification(monthly_aggregated_df)
+                        monthly_aggregated_df_, monthly_aggregated_df = keep_required_columns(monthly_aggregated_df, row)
+                        monthly_weather_data_df = pd.concat([monthly_weather_data_df, monthly_aggregated_df], ignore_index=True)
+                        monthly_full_weather_data_df = pd.concat([monthly_full_weather_data_df, monthly_aggregated_df_], ignore_index=True)
             processed_stations += 1
             #print(f"Processed {processed_stations} of {total_stations} stations")
+    # Relabel the "date" column as "month"
+    monthly_weather_data_df = monthly_weather_data_df.rename(columns={"date": "month"})
+    monthly_full_weather_data_df = monthly_full_weather_data_df.rename(columns={"date": "month"})
 
-    return weather_data_df, full_weather_data_df
+    # Set the index of monthly_full_weather_data_df to display year and month
+    monthly_full_weather_data_df["month"] = pd.to_datetime(monthly_full_weather_data_df["month"]).dt.strftime("%Y-%m")
+    monthly_full_weather_data_df = monthly_full_weather_data_df.set_index("month")
+
+    return weather_data_df, full_weather_data_df, monthly_weather_data_df, monthly_full_weather_data_df
 
 if __name__ == "__main__":
     print(f"Processing year {sys.argv[1]} in Weather_ReadIn.py...")
@@ -503,11 +548,15 @@ if __name__ == "__main__":
     #year = 1972
 
     metadata_df = read_metadata()
-    weather_data_df, full_weather_data_df = process_and_merge_dataframes(year, metadata_df)
+    weather_data_df, full_weather_data_df, monthly_weather_data_df, monthly_full_weather_data_df= process_and_merge_dataframes(year, metadata_df)
     short_weather_data_file_path = os.path.join(PROCESSED_DATA_DIR, f"Weather_Data_Short_{year}.csv")
     full_weather_data_file_path = os.path.join(PROCESSED_DATA_DIR, f"Weather_Data_Full_{year}.csv")
+    monthly_short_weather_data_file_path = os.path.join(PROCESSED_DATA_DIR, f"Monthly_Weather_Data_Short_{year}.csv")
+    monthly_full_weather_data_file_path = os.path.join(PROCESSED_DATA_DIR, f"Monthly_Weather_Data_Full_{year}.csv")
     full_weather_data_df.to_csv(full_weather_data_file_path, index=False)
     weather_data_df.to_csv(short_weather_data_file_path, index=False)
+    monthly_full_weather_data_df.to_csv(monthly_full_weather_data_file_path, index=False)
+    monthly_weather_data_df.to_csv(monthly_short_weather_data_file_path, index=False)
 
-    print(f"Saved short weather data to: {short_weather_data_file_path}")
-    print(f"Saved full weather data to: {full_weather_data_file_path}")
+    print(f"Saved short weather data to: {short_weather_data_file_path}, {monthly_short_weather_data_file_path}")
+    print(f"Saved full weather data to: {full_weather_data_file_path}, {monthly_full_weather_data_file_path}")

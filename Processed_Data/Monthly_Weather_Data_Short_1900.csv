@@ -1,0 +1,85 @@
+month,station_name,station_latitude,station_longitude,weather_classifier,temp_category,sunshine_type
+1900-01-31,"MORPETH, COCKLE PARK",55.212,-1.685,Mild Rain,Cool,Partially Overcast
+1900-02-28,"MORPETH, COCKLE PARK",55.212,-1.685,Mild Rain,Cold,Partially Overcast
+1900-03-31,"MORPETH, COCKLE PARK",55.212,-1.685,Drizzle,Cool,Partially Overcast
+1900-04-30,"MORPETH, COCKLE PARK",55.212,-1.685,Drizzle,Cool,Sunny
+1900-05-31,"MORPETH, COCKLE PARK",55.212,-1.685,Drizzle,Cool,Sunny
+1900-06-30,"MORPETH, COCKLE PARK",55.212,-1.685,Mild Rain,Mild,Sunny
+1900-07-31,"MORPETH, COCKLE PARK",55.212,-1.685,Drizzle,Mild,Sunny
+1900-08-31,"MORPETH, COCKLE PARK",55.212,-1.685,Mild Rain,Mild,Sunny
+1900-09-30,"MORPETH, COCKLE PARK",55.212,-1.685,Dry,Mild,Sunny
+1900-10-31,"MORPETH, COCKLE PARK",55.212,-1.685,Mild Rain,Cool,Sunny
+1900-11-30,"MORPETH, COCKLE PARK",55.212,-1.685,Mild Rain,Cool,Partially Overcast
+1900-12-31,"MORPETH, COCKLE PARK",55.212,-1.685,Drizzle,Cool,Partially Overcast
+1900-01-31,DURHAM,54.768,-1.586,Drizzle,Cool,Partially Overcast
+1900-02-28,DURHAM,54.768,-1.586,Mild Rain,Cold,Partially Overcast
+1900-03-31,DURHAM,54.768,-1.586,Drizzle,Cool,Partially Overcast
+1900-04-30,DURHAM,54.768,-1.586,Dry,Cool,Sunny
+1900-05-31,DURHAM,54.768,-1.586,Dry,Cool,Sunny
+1900-06-30,DURHAM,54.768,-1.586,Mild Rain,Mild,Sunny
+1900-07-31,DURHAM,54.768,-1.586,Dry,Mild,Sunny
+1900-08-31,DURHAM,54.768,-1.586,Mild Rain,Mild,Sunny
+1900-09-30,DURHAM,54.768,-1.586,Dry,Mild,Sunny
+1900-10-31,DURHAM,54.768,-1.586,Mild Rain,Cool,Sunny
+1900-11-30,DURHAM,54.768,-1.586,Drizzle,Cool,Partially Overcast
+1900-12-31,DURHAM,54.768,-1.586,Drizzle,Cool,Partially Overcast
+1900-01-31,SHEFFIELD,53.381,-1.491,Mild Rain,Cool,Partially Overcast
+1900-02-28,SHEFFIELD,53.381,-1.491,Mild Rain,Cold,Partially Overcast
+1900-03-31,SHEFFIELD,53.381,-1.491,Dry,Cool,Partially Overcast
+1900-04-30,SHEFFIELD,53.381,-1.491,Drizzle,Cool,Sunny
+1900-05-31,SHEFFIELD,53.381,-1.491,Drizzle,Cool,Sunny
+1900-06-30,SHEFFIELD,53.381,-1.491,Mild Rain,Mild,Sunny
+1900-07-31,SHEFFIELD,53.381,-1.491,Drizzle,Mild,Sunny
+1900-08-31,SHEFFIELD,53.381,-1.491,Mild Rain,Mild,Sunny
+1900-09-30,SHEFFIELD,53.381,-1.491,Dry,Mild,Sunny
+1900-10-31,SHEFFIELD,53.381,-1.491,Drizzle,Cool,Sunny
+1900-11-30,SHEFFIELD,53.381,-1.491,Drizzle,Cool,Partially Overcast
+1900-12-31,SHEFFIELD,53.381,-1.491,Mild Rain,Cool,Partially Overcast
+1900-01-31,CHELTENHAM,51.895,-2.08,Drizzle,Cool,Partially Overcast
+1900-02-28,CHELTENHAM,51.895,-2.08,Mild Rain,Cool,Partially Overcast
+1900-03-31,CHELTENHAM,51.895,-2.08,Dry,Cool,Sunny
+1900-04-30,CHELTENHAM,51.895,-2.08,Dry,Cool,Sunny
+1900-05-31,CHELTENHAM,51.895,-2.08,Drizzle,Mild,Sunny
+1900-06-30,CHELTENHAM,51.895,-2.08,Drizzle,Mild,Sunny
+1900-07-31,CHELTENHAM,51.895,-2.08,Drizzle,Mild,Sunny
+1900-08-31,CHELTENHAM,51.895,-2.08,Drizzle,Mild,Sunny
+1900-09-30,CHELTENHAM,51.895,-2.08,Dry,Mild,Sunny
+1900-10-31,CHELTENHAM,51.895,-2.08,Drizzle,Cool,Sunny
+1900-11-30,CHELTENHAM,51.895,-2.08,Drizzle,Cool,Partially Overcast
+1900-12-31,CHELTENHAM,51.895,-2.08,Mild Rain,Cool,Partially Overcast
+1900-01-31,MARGATE,51.392,1.402,Drizzle,Cool,Partially Overcast
+1900-02-28,MARGATE,51.392,1.402,Mild Rain,Cool,Partially Overcast
+1900-03-31,MARGATE,51.392,1.402,Dry,Cool,Sunny
+1900-04-30,MARGATE,51.392,1.402,Dry,Cool,Sunny
+1900-05-31,MARGATE,51.392,1.402,Dry,Cool,Sunny
+1900-06-30,MARGATE,51.392,1.402,Drizzle,Mild,Sunny
+1900-07-31,MARGATE,51.392,1.402,Drizzle,Mild,Sunny
+1900-08-31,MARGATE,51.392,1.402,Drizzle,Mild,Sunny
+1900-09-30,MARGATE,51.392,1.402,Dry,Mild,Sunny
+1900-10-31,MARGATE,51.392,1.402,Drizzle,Cool,Sunny
+1900-11-30,MARGATE,51.392,1.402,Drizzle,Cool,Partially Overcast
+1900-12-31,MARGATE,51.392,1.402,Drizzle,Cool,Partially Overcast
+1900-01-31,EASTBOURNE,50.759,0.283,Mild Rain,Cool,Partially Overcast
+1900-02-28,EASTBOURNE,50.759,0.283,Mild Rain,Cool,Partially Overcast
+1900-03-31,EASTBOURNE,50.759,0.283,Drizzle,Cool,Sunny
+1900-04-30,EASTBOURNE,50.759,0.283,Drizzle,Cool,Sunny
+1900-05-31,EASTBOURNE,50.759,0.283,Dry,Cool,Sunny
+1900-06-30,EASTBOURNE,50.759,0.283,Drizzle,Mild,Sunny
+1900-07-31,EASTBOURNE,50.759,0.283,Drizzle,Mild,Sunny
+1900-08-31,EASTBOURNE,50.759,0.283,Drizzle,Mild,Sunny
+1900-09-30,EASTBOURNE,50.759,0.283,Dry,Mild,Sunny
+1900-10-31,EASTBOURNE,50.759,0.283,Mild Rain,Cool,Sunny
+1900-11-30,EASTBOURNE,50.759,0.283,Mild Rain,Cool,Partially Overcast
+1900-12-31,EASTBOURNE,50.759,0.283,Mild Rain,Cool,Partially Overcast
+1900-01-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Mild Rain,Cool,Partially Overcast
+1900-02-28,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Mild Rain,Cool,Partially Overcast
+1900-03-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Drizzle,Cool,Partially Overcast
+1900-04-30,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Drizzle,Cool,Sunny
+1900-05-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Drizzle,Mild,Sunny
+1900-06-30,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Drizzle,Mild,Sunny
+1900-07-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Dry,Mild,Sunny
+1900-08-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Mild Rain,Mild,Sunny
+1900-09-30,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Dry,Mild,Sunny
+1900-10-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Drizzle,Mild,Sunny
+1900-11-30,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Mild Rain,Cool,Partially Overcast
+1900-12-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Mild Rain,Cool,Partially Overcast

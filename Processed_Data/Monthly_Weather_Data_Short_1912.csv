@@ -1,0 +1,409 @@
+month,station_name,station_latitude,station_longitude,weather_classifier,temp_category,sunshine_type
+1912-01-31,GORDON CASTLE,57.621,-3.09,Drizzle,Cool,Partially Overcast
+1912-02-29,GORDON CASTLE,57.621,-3.09,Drizzle,Cool,Partially Overcast
+1912-03-31,GORDON CASTLE,57.621,-3.09,Drizzle,Cool,Sunny
+1912-04-30,GORDON CASTLE,57.621,-3.09,Drizzle,Cool,Sunny
+1912-05-31,GORDON CASTLE,57.621,-3.09,Mild Rain,Cool,Sunny
+1912-06-30,GORDON CASTLE,57.621,-3.09,Drizzle,Mild,Sunny
+1912-07-31,GORDON CASTLE,57.621,-3.09,Drizzle,Mild,Sunny
+1912-08-31,GORDON CASTLE,57.621,-3.09,Mild Rain,Cool,Partially Overcast
+1912-09-30,GORDON CASTLE,57.621,-3.09,Drizzle,Cool,Partially Overcast
+1912-10-31,GORDON CASTLE,57.621,-3.09,Drizzle,Cool,Partially Overcast
+1912-11-30,GORDON CASTLE,57.621,-3.09,Drizzle,Cool,Partially Overcast
+1912-12-31,GORDON CASTLE,57.621,-3.09,Drizzle,Cool,Partially Overcast
+1912-01-31,"MORPETH, COCKLE PARK",55.212,-1.685,Mild Rain,Cold,Partially Overcast
+1912-02-29,"MORPETH, COCKLE PARK",55.212,-1.685,Drizzle,Cool,Partially Overcast
+1912-03-31,"MORPETH, COCKLE PARK",55.212,-1.685,Drizzle,Cool,Sunny
+1912-04-30,"MORPETH, COCKLE PARK",55.212,-1.685,Dry,Cool,Sunny
+1912-05-31,"MORPETH, COCKLE PARK",55.212,-1.685,Drizzle,Cool,Sunny
+1912-06-30,"MORPETH, COCKLE PARK",55.212,-1.685,Mild Rain,Mild,Sunny
+1912-07-31,"MORPETH, COCKLE PARK",55.212,-1.685,Drizzle,Mild,Sunny
+1912-08-31,"MORPETH, COCKLE PARK",55.212,-1.685,Mild Rain,Cool,Partially Overcast
+1912-09-30,"MORPETH, COCKLE PARK",55.212,-1.685,Drizzle,Cool,Sunny
+1912-10-31,"MORPETH, COCKLE PARK",55.212,-1.685,Mild Rain,Cool,Sunny
+1912-11-30,"MORPETH, COCKLE PARK",55.212,-1.685,Drizzle,Cool,Partially Overcast
+1912-12-31,"MORPETH, COCKLE PARK",55.212,-1.685,Drizzle,Cool,Partially Overcast
+1912-01-31,DURHAM,54.768,-1.586,Mild Rain,Cold,Partially Overcast
+1912-02-29,DURHAM,54.768,-1.586,Drizzle,Cool,Partially Overcast
+1912-03-31,DURHAM,54.768,-1.586,Drizzle,Cool,Sunny
+1912-04-30,DURHAM,54.768,-1.586,Dry,Cool,Sunny
+1912-05-31,DURHAM,54.768,-1.586,Drizzle,Cool,Sunny
+1912-06-30,DURHAM,54.768,-1.586,Mild Rain,Mild,Sunny
+1912-07-31,DURHAM,54.768,-1.586,Drizzle,Mild,Partially Overcast
+1912-08-31,DURHAM,54.768,-1.586,Mild Rain,Mild,Partially Overcast
+1912-09-30,DURHAM,54.768,-1.586,Drizzle,Cool,Sunny
+1912-10-31,DURHAM,54.768,-1.586,Drizzle,Cool,Partially Overcast
+1912-11-30,DURHAM,54.768,-1.586,Drizzle,Cool,Partially Overcast
+1912-12-31,DURHAM,54.768,-1.586,Drizzle,Cool,Partially Overcast
+1912-01-31,HULL,53.756,-0.358,Drizzle,Cool,Partially Overcast
+1912-02-29,HULL,53.756,-0.358,Drizzle,Cool,Partially Overcast
+1912-03-31,HULL,53.756,-0.358,Drizzle,Cool,Partially Overcast
+1912-04-30,HULL,53.756,-0.358,Dry,Cool,Sunny
+1912-05-31,HULL,53.756,-0.358,Drizzle,Mild,Sunny
+1912-06-30,HULL,53.756,-0.358,Mild Rain,Mild,Sunny
+1912-07-31,HULL,53.756,-0.358,Mild Rain,Mild,Partially Overcast
+1912-08-31,HULL,53.756,-0.358,Mild Rain,Mild,Partially Overcast
+1912-09-30,HULL,53.756,-0.358,Drizzle,Mild,Partially Overcast
+1912-10-31,HULL,53.756,-0.358,Drizzle,Cool,Partially Overcast
+1912-11-30,HULL,53.756,-0.358,Mild Rain,Cool,Partially Overcast
+1912-12-31,HULL,53.756,-0.358,Drizzle,Cool,Partially Overcast
+1912-01-31,SKEGNESS,53.148,0.346,Drizzle,Cool,Partially Overcast
+1912-02-29,SKEGNESS,53.148,0.346,Dry,Cool,Partially Overcast
+1912-03-31,SKEGNESS,53.148,0.346,Drizzle,Cool,Sunny
+1912-04-30,SKEGNESS,53.148,0.346,Dry,Cool,Sunny
+1912-05-31,SKEGNESS,53.148,0.346,Drizzle,Cool,Sunny
+1912-06-30,SKEGNESS,53.148,0.346,Mild Rain,Mild,Sunny
+1912-07-31,SKEGNESS,53.148,0.346,Mild Rain,Mild,Sunny
+1912-08-31,SKEGNESS,53.148,0.346,Mild Rain,Mild,Sunny
+1912-09-30,SKEGNESS,53.148,0.346,Drizzle,Cool,Sunny
+1912-10-31,SKEGNESS,53.148,0.346,Drizzle,Cool,Sunny
+1912-11-30,SKEGNESS,53.148,0.346,Mild Rain,Cool,Partially Overcast
+1912-12-31,SKEGNESS,53.148,0.346,Drizzle,Cool,Partially Overcast
+1912-01-31,CROMER,52.934,1.291,Drizzle,Cool,
+1912-02-29,CROMER,52.934,1.291,Drizzle,Cool,
+1912-03-31,CROMER,52.934,1.291,Drizzle,Cool,
+1912-04-30,CROMER,52.934,1.291,Dry,Cool,
+1912-05-31,CROMER,52.934,1.291,Dry,Mild,
+1912-06-30,CROMER,52.934,1.291,Drizzle,Mild,
+1912-07-31,CROMER,52.934,1.291,Mild Rain,Mild,
+1912-08-31,CROMER,52.934,1.291,Heavy Rain,Mild,
+1912-09-30,CROMER,52.934,1.291,Drizzle,Cool,
+1912-10-31,CROMER,52.934,1.291,Drizzle,Cool,
+1912-11-30,CROMER,52.934,1.291,Drizzle,Cool,
+1912-12-31,CROMER,52.934,1.291,Drizzle,Cool,
+1912-01-31,LOWESTOFT,52.49,1.744,Drizzle,Cool,Partially Overcast
+1912-02-29,LOWESTOFT,52.49,1.744,Drizzle,Cool,Partially Overcast
+1912-03-31,LOWESTOFT,52.49,1.744,Drizzle,Cool,Sunny
+1912-04-30,LOWESTOFT,52.49,1.744,Dry,Cool,Sunny
+1912-05-31,LOWESTOFT,52.49,1.744,Dry,Mild,Sunny
+1912-06-30,LOWESTOFT,52.49,1.744,Mild Rain,Mild,Sunny
+1912-07-31,LOWESTOFT,52.49,1.744,Drizzle,Mild,Sunny
+1912-08-31,LOWESTOFT,52.49,1.744,Mild Rain,Mild,Sunny
+1912-09-30,LOWESTOFT,52.49,1.744,Drizzle,Cool,Sunny
+1912-10-31,LOWESTOFT,52.49,1.744,Drizzle,Cool,Sunny
+1912-11-30,LOWESTOFT,52.49,1.744,Mild Rain,Cool,Partially Overcast
+1912-12-31,LOWESTOFT,52.49,1.744,Drizzle,Cool,Partially Overcast
+1912-01-31,"CAMBRIDGE, BOTANIC GARDEN",52.194,0.129,Mild Rain,Cool,Partially Overcast
+1912-02-29,"CAMBRIDGE, BOTANIC GARDEN",52.194,0.129,Dry,Cool,Partially Overcast
+1912-03-31,"CAMBRIDGE, BOTANIC GARDEN",52.194,0.129,Drizzle,Cool,Sunny
+1912-04-30,"CAMBRIDGE, BOTANIC GARDEN",52.194,0.129,Dry,Cool,Sunny
+1912-05-31,"CAMBRIDGE, BOTANIC GARDEN",52.194,0.129,Dry,Mild,Sunny
+1912-06-30,"CAMBRIDGE, BOTANIC GARDEN",52.194,0.129,Drizzle,Mild,Sunny
+1912-07-31,"CAMBRIDGE, BOTANIC GARDEN",52.194,0.129,Drizzle,Mild,Sunny
+1912-08-31,"CAMBRIDGE, BOTANIC GARDEN",52.194,0.129,Mild Rain,Mild,Sunny
+1912-09-30,"CAMBRIDGE, BOTANIC GARDEN",52.194,0.129,Drizzle,Mild,Sunny
+1912-10-31,"CAMBRIDGE, BOTANIC GARDEN",52.194,0.129,Drizzle,Cool,Sunny
+1912-11-30,"CAMBRIDGE, BOTANIC GARDEN",52.194,0.129,Drizzle,Cool,Partially Overcast
+1912-12-31,"CAMBRIDGE, BOTANIC GARDEN",52.194,0.129,Drizzle,Cool,Partially Overcast
+1912-01-31,WOBURN,52.014,-0.596,Mild Rain,Cool,Partially Overcast
+1912-02-29,WOBURN,52.014,-0.596,Drizzle,Cool,Partially Overcast
+1912-03-31,WOBURN,52.014,-0.596,Drizzle,Cool,Partially Overcast
+1912-04-30,WOBURN,52.014,-0.596,Dry,Cool,Sunny
+1912-05-31,WOBURN,52.014,-0.596,Drizzle,Mild,Sunny
+1912-06-30,WOBURN,52.014,-0.596,Drizzle,Mild,Sunny
+1912-07-31,WOBURN,52.014,-0.596,Drizzle,Mild,Sunny
+1912-08-31,WOBURN,52.014,-0.596,Mild Rain,Mild,Sunny
+1912-09-30,WOBURN,52.014,-0.596,Drizzle,Cool,Sunny
+1912-10-31,WOBURN,52.014,-0.596,Drizzle,Cool,Sunny
+1912-11-30,WOBURN,52.014,-0.596,Drizzle,Cool,Partially Overcast
+1912-12-31,WOBURN,52.014,-0.596,Drizzle,Cool,Partially Overcast
+1912-01-31,ROTHAMSTED,51.807,-0.36,Mild Rain,Cool,Partially Overcast
+1912-02-29,ROTHAMSTED,51.807,-0.36,Drizzle,Cool,Partially Overcast
+1912-03-31,ROTHAMSTED,51.807,-0.36,Mild Rain,Cool,Partially Overcast
+1912-04-30,ROTHAMSTED,51.807,-0.36,Dry,Cool,Sunny
+1912-05-31,ROTHAMSTED,51.807,-0.36,Drizzle,Mild,Sunny
+1912-06-30,ROTHAMSTED,51.807,-0.36,Mild Rain,Mild,Sunny
+1912-07-31,ROTHAMSTED,51.807,-0.36,Drizzle,Mild,Sunny
+1912-08-31,ROTHAMSTED,51.807,-0.36,Mild Rain,Mild,Sunny
+1912-09-30,ROTHAMSTED,51.807,-0.36,Drizzle,Mild,Sunny
+1912-10-31,ROTHAMSTED,51.807,-0.36,Mild Rain,Cool,Sunny
+1912-11-30,ROTHAMSTED,51.807,-0.36,Drizzle,Cool,Partially Overcast
+1912-12-31,ROTHAMSTED,51.807,-0.36,Mild Rain,Cool,Partially Overcast
+1912-01-31,BRADFORD,53.814,-1.774,Mild Rain,Cold,Partially Overcast
+1912-02-29,BRADFORD,53.814,-1.774,Drizzle,Cool,Partially Overcast
+1912-03-31,BRADFORD,53.814,-1.774,Mild Rain,Cool,Partially Overcast
+1912-04-30,BRADFORD,53.814,-1.774,Dry,Cool,Sunny
+1912-05-31,BRADFORD,53.814,-1.774,Drizzle,Cool,Sunny
+1912-06-30,BRADFORD,53.814,-1.774,Mild Rain,Mild,Sunny
+1912-07-31,BRADFORD,53.814,-1.774,Drizzle,Mild,Sunny
+1912-08-31,BRADFORD,53.814,-1.774,Mild Rain,Mild,Partially Overcast
+1912-09-30,BRADFORD,53.814,-1.774,Drizzle,Cool,Sunny
+1912-10-31,BRADFORD,53.814,-1.774,Mild Rain,Cool,Partially Overcast
+1912-11-30,BRADFORD,53.814,-1.774,Drizzle,Cool,Partially Overcast
+1912-12-31,BRADFORD,53.814,-1.774,Mild Rain,Cool,Partially Overcast
+1912-01-31,SHEFFIELD,53.381,-1.491,Mild Rain,Cool,Partially Overcast
+1912-02-29,SHEFFIELD,53.381,-1.491,Drizzle,Cool,Partially Overcast
+1912-03-31,SHEFFIELD,53.381,-1.491,Mild Rain,Cool,Partially Overcast
+1912-04-30,SHEFFIELD,53.381,-1.491,Dry,Cool,Sunny
+1912-05-31,SHEFFIELD,53.381,-1.491,Mild Rain,Mild,Sunny
+1912-06-30,SHEFFIELD,53.381,-1.491,Mild Rain,Mild,Sunny
+1912-07-31,SHEFFIELD,53.381,-1.491,Mild Rain,Mild,Sunny
+1912-08-31,SHEFFIELD,53.381,-1.491,Mild Rain,Mild,Partially Overcast
+1912-09-30,SHEFFIELD,53.381,-1.491,Drizzle,Cool,Sunny
+1912-10-31,SHEFFIELD,53.381,-1.491,Drizzle,Cool,Sunny
+1912-11-30,SHEFFIELD,53.381,-1.491,Drizzle,Cool,Partially Overcast
+1912-12-31,SHEFFIELD,53.381,-1.491,Mild Rain,Cool,Partially Overcast
+1912-01-31,BUXTON,53.258,-1.914,Mild Rain,Cold,Partially Overcast
+1912-02-29,BUXTON,53.258,-1.914,Drizzle,Cool,Partially Overcast
+1912-03-31,BUXTON,53.258,-1.914,Mild Rain,Cool,Partially Overcast
+1912-04-30,BUXTON,53.258,-1.914,Drizzle,Cool,Sunny
+1912-05-31,BUXTON,53.258,-1.914,Mild Rain,Cool,Sunny
+1912-06-30,BUXTON,53.258,-1.914,Mild Rain,Mild,Sunny
+1912-07-31,BUXTON,53.258,-1.914,Mild Rain,Mild,Sunny
+1912-08-31,BUXTON,53.258,-1.914,Mild Rain,Cool,Sunny
+1912-09-30,BUXTON,53.258,-1.914,Drizzle,Cool,Partially Overcast
+1912-10-31,BUXTON,53.258,-1.914,Mild Rain,Cool,Sunny
+1912-11-30,BUXTON,53.258,-1.914,Mild Rain,Cool,Partially Overcast
+1912-12-31,BUXTON,53.258,-1.914,Mild Rain,Cool,Partially Overcast
+1912-01-31,MALVERN,52.113,-2.308,Dry,Cool,
+1912-02-29,MALVERN,52.113,-2.308,Drizzle,Cool,Partially Overcast
+1912-03-31,MALVERN,52.113,-2.308,Mild Rain,Cool,Partially Overcast
+1912-04-30,MALVERN,52.113,-2.308,Dry,Cool,Sunny
+1912-05-31,MALVERN,52.113,-2.308,Drizzle,Mild,Sunny
+1912-06-30,MALVERN,52.113,-2.308,Mild Rain,Mild,Sunny
+1912-07-31,MALVERN,52.113,-2.308,Mild Rain,Mild,Sunny
+1912-08-31,MALVERN,52.113,-2.308,Heavy Rain,Mild,Sunny
+1912-09-30,MALVERN,52.113,-2.308,Dry,Cool,Sunny
+1912-10-31,MALVERN,52.113,-2.308,Mild Rain,Cool,Sunny
+1912-11-30,MALVERN,52.113,-2.308,Drizzle,Cool,Partially Overcast
+1912-12-31,MALVERN,52.113,-2.308,Mild Rain,Cool,Partially Overcast
+1912-01-31,CHELTENHAM,51.895,-2.08,Drizzle,Cool,Partially Overcast
+1912-02-29,CHELTENHAM,51.895,-2.08,Drizzle,Cool,Partially Overcast
+1912-03-31,CHELTENHAM,51.895,-2.08,Mild Rain,Cool,Partially Overcast
+1912-04-30,CHELTENHAM,51.895,-2.08,Dry,Cool,Sunny
+1912-05-31,CHELTENHAM,51.895,-2.08,Drizzle,Mild,Sunny
+1912-06-30,CHELTENHAM,51.895,-2.08,Mild Rain,Mild,Sunny
+1912-07-31,CHELTENHAM,51.895,-2.08,Mild Rain,Mild,Sunny
+1912-08-31,CHELTENHAM,51.895,-2.08,Mild Rain,Mild,Partially Overcast
+1912-09-30,CHELTENHAM,51.895,-2.08,Dry,Mild,Sunny
+1912-10-31,CHELTENHAM,51.895,-2.08,Drizzle,Cool,Sunny
+1912-11-30,CHELTENHAM,51.895,-2.08,Drizzle,Cool,Partially Overcast
+1912-12-31,CHELTENHAM,51.895,-2.08,Drizzle,Cool,Partially Overcast
+1912-01-31,HAMPSTEAD,51.561,-0.18,Mild Rain,Cool,Partially Overcast
+1912-02-29,HAMPSTEAD,51.561,-0.18,Drizzle,Cool,Partially Overcast
+1912-03-31,HAMPSTEAD,51.561,-0.18,Drizzle,Cool,Partially Overcast
+1912-04-30,HAMPSTEAD,51.561,-0.18,Dry,Cool,Sunny
+1912-05-31,HAMPSTEAD,51.561,-0.18,Dry,Mild,Sunny
+1912-06-30,HAMPSTEAD,51.561,-0.18,Mild Rain,Mild,Sunny
+1912-07-31,HAMPSTEAD,51.561,-0.18,Drizzle,Mild,Sunny
+1912-08-31,HAMPSTEAD,51.561,-0.18,Mild Rain,Mild,Sunny
+1912-09-30,HAMPSTEAD,51.561,-0.18,Drizzle,Cool,Sunny
+1912-10-31,HAMPSTEAD,51.561,-0.18,Drizzle,Cool,Sunny
+1912-11-30,HAMPSTEAD,51.561,-0.18,Drizzle,Cool,Partially Overcast
+1912-12-31,HAMPSTEAD,51.561,-0.18,Drizzle,Cool,Partially Overcast
+1912-01-31,"LONDON, ST JAMES'S PARK",51.505,-0.131,Mild Rain,Cool,Partially Overcast
+1912-02-29,"LONDON, ST JAMES'S PARK",51.505,-0.131,Drizzle,Cool,Partially Overcast
+1912-03-31,"LONDON, ST JAMES'S PARK",51.505,-0.131,Drizzle,Cool,Partially Overcast
+1912-04-30,"LONDON, ST JAMES'S PARK",51.505,-0.131,Dry,Cool,Sunny
+1912-05-31,"LONDON, ST JAMES'S PARK",51.505,-0.131,Dry,Mild,Sunny
+1912-06-30,"LONDON, ST JAMES'S PARK",51.505,-0.131,Drizzle,Mild,Sunny
+1912-07-31,"LONDON, ST JAMES'S PARK",51.505,-0.131,Dry,Mild,Sunny
+1912-08-31,"LONDON, ST JAMES'S PARK",51.505,-0.131,Mild Rain,Mild,Sunny
+1912-09-30,"LONDON, ST JAMES'S PARK",51.505,-0.131,Dry,Mild,Sunny
+1912-10-31,"LONDON, ST JAMES'S PARK",51.505,-0.131,Drizzle,Cool,Partially Overcast
+1912-11-30,"LONDON, ST JAMES'S PARK",51.505,-0.131,Drizzle,Cool,Partially Overcast
+1912-12-31,"LONDON, ST JAMES'S PARK",51.505,-0.131,Drizzle,Cool,Partially Overcast
+1912-01-31,WISLEY,51.311,-0.476,Drizzle,Cool,Partially Overcast
+1912-02-29,WISLEY,51.311,-0.476,Drizzle,Cool,Partially Overcast
+1912-03-31,WISLEY,51.311,-0.476,Drizzle,Cool,Sunny
+1912-04-30,WISLEY,51.311,-0.476,Dry,Cool,Sunny
+1912-05-31,WISLEY,51.311,-0.476,Dry,Mild,Sunny
+1912-06-30,WISLEY,51.311,-0.476,Drizzle,Mild,Sunny
+1912-07-31,WISLEY,51.311,-0.476,Drizzle,Mild,Sunny
+1912-08-31,WISLEY,51.311,-0.476,Mild Rain,Mild,Sunny
+1912-09-30,WISLEY,51.311,-0.476,Drizzle,Mild,Sunny
+1912-10-31,WISLEY,51.311,-0.476,Mild Rain,Cool,Sunny
+1912-11-30,WISLEY,51.311,-0.476,Drizzle,Cool,Partially Overcast
+1912-12-31,WISLEY,51.311,-0.476,Drizzle,Cool,Partially Overcast
+1912-01-31,FOLKESTONE,51.078,1.178,Mild Rain,Cool,Partially Overcast
+1912-02-29,FOLKESTONE,51.078,1.178,Drizzle,Cool,Partially Overcast
+1912-03-31,FOLKESTONE,51.078,1.178,Mild Rain,Cool,Sunny
+1912-04-30,FOLKESTONE,51.078,1.178,Dry,Cool,Sunny
+1912-05-31,FOLKESTONE,51.078,1.178,Dry,Mild,Sunny
+1912-06-30,FOLKESTONE,51.078,1.178,Mild Rain,Mild,Sunny
+1912-07-31,FOLKESTONE,51.078,1.178,Drizzle,Mild,Sunny
+1912-08-31,FOLKESTONE,51.078,1.178,Mild Rain,Mild,Sunny
+1912-09-30,FOLKESTONE,51.078,1.178,Drizzle,Mild,Sunny
+1912-10-31,FOLKESTONE,51.078,1.178,Mild Rain,Cool,Sunny
+1912-11-30,FOLKESTONE,51.078,1.178,Drizzle,Cool,Partially Overcast
+1912-12-31,FOLKESTONE,51.078,1.178,Drizzle,Cool,Partially Overcast
+1912-01-31,BOGNOR REGIS,50.782,-0.677,Mild Rain,Cool,Partially Overcast
+1912-02-29,BOGNOR REGIS,50.782,-0.677,Drizzle,Cool,Partially Overcast
+1912-03-31,BOGNOR REGIS,50.782,-0.677,Mild Rain,Cool,Sunny
+1912-04-30,BOGNOR REGIS,50.782,-0.677,Dry,Cool,Sunny
+1912-05-31,BOGNOR REGIS,50.782,-0.677,Drizzle,Mild,Sunny
+1912-06-30,BOGNOR REGIS,50.782,-0.677,Drizzle,Mild,Sunny
+1912-07-31,BOGNOR REGIS,50.782,-0.677,Drizzle,Mild,Sunny
+1912-08-31,BOGNOR REGIS,50.782,-0.677,Mild Rain,Mild,Sunny
+1912-09-30,BOGNOR REGIS,50.782,-0.677,Drizzle,Mild,Sunny
+1912-10-31,BOGNOR REGIS,50.782,-0.677,Mild Rain,Cool,Sunny
+1912-11-30,BOGNOR REGIS,50.782,-0.677,Drizzle,Cool,Partially Overcast
+1912-12-31,BOGNOR REGIS,50.782,-0.677,Drizzle,Cool,Partially Overcast
+1912-01-31,EASTBOURNE,50.759,0.283,Mild Rain,Cool,Partially Overcast
+1912-02-29,EASTBOURNE,50.759,0.283,Drizzle,Cool,Partially Overcast
+1912-03-31,EASTBOURNE,50.759,0.283,Mild Rain,Cool,Sunny
+1912-04-30,EASTBOURNE,50.759,0.283,Dry,Cool,Sunny
+1912-05-31,EASTBOURNE,50.759,0.283,Drizzle,Mild,Sunny
+1912-06-30,EASTBOURNE,50.759,0.283,Mild Rain,Mild,Sunny
+1912-07-31,EASTBOURNE,50.759,0.283,Drizzle,Mild,Sunny
+1912-08-31,EASTBOURNE,50.759,0.283,Mild Rain,Mild,Sunny
+1912-09-30,EASTBOURNE,50.759,0.283,Drizzle,Mild,Sunny
+1912-10-31,EASTBOURNE,50.759,0.283,Mild Rain,Cool,Sunny
+1912-11-30,EASTBOURNE,50.759,0.283,Drizzle,Cool,Partially Overcast
+1912-12-31,EASTBOURNE,50.759,0.283,Mild Rain,Cool,Partially Overcast
+1912-01-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Mild Rain,Cool,Partially Overcast
+1912-02-29,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Drizzle,Cool,Partially Overcast
+1912-03-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Mild Rain,Cool,Sunny
+1912-04-30,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Dry,Mild,Sunny
+1912-05-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Drizzle,Mild,Sunny
+1912-06-30,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Mild Rain,Mild,Sunny
+1912-07-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Drizzle,Mild,Sunny
+1912-08-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Mild Rain,Mild,Sunny
+1912-09-30,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Drizzle,Mild,Sunny
+1912-10-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Mild Rain,Cool,Sunny
+1912-11-30,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Drizzle,Cool,Partially Overcast
+1912-12-31,"SOUTHAMPTON, EAST PARK",50.905,-1.405,Mild Rain,Cool,Partially Overcast
+1912-01-31,ESKDALEMUIR,55.312,-3.207,Mild Rain,Cold,Partially Overcast
+1912-02-29,ESKDALEMUIR,55.312,-3.207,Mild Rain,Cool,Partially Overcast
+1912-03-31,ESKDALEMUIR,55.312,-3.207,Mild Rain,Cool,Partially Overcast
+1912-04-30,ESKDALEMUIR,55.312,-3.207,Dry,Cool,Sunny
+1912-05-31,ESKDALEMUIR,55.312,-3.207,Drizzle,Cool,Sunny
+1912-06-30,ESKDALEMUIR,55.312,-3.207,Mild Rain,Cool,Partially Overcast
+1912-07-31,ESKDALEMUIR,55.312,-3.207,Mild Rain,Mild,Sunny
+1912-08-31,ESKDALEMUIR,55.312,-3.207,Mild Rain,Cool,Partially Overcast
+1912-09-30,ESKDALEMUIR,55.312,-3.207,Drizzle,Cool,Sunny
+1912-10-31,ESKDALEMUIR,55.312,-3.207,Mild Rain,Cool,Partially Overcast
+1912-11-30,ESKDALEMUIR,55.312,-3.207,Mild Rain,Cool,Partially Overcast
+1912-12-31,ESKDALEMUIR,55.312,-3.207,Heavy Rain,Cool,Partially Overcast
+1912-01-31,NEWTON RIGG,54.67,-2.788,Mild Rain,Cool,Partially Overcast
+1912-02-29,NEWTON RIGG,54.67,-2.788,Drizzle,Cool,Partially Overcast
+1912-03-31,NEWTON RIGG,54.67,-2.788,Mild Rain,Cool,Partially Overcast
+1912-04-30,NEWTON RIGG,54.67,-2.788,Dry,Cool,Sunny
+1912-05-31,NEWTON RIGG,54.67,-2.788,Drizzle,Cool,Sunny
+1912-06-30,NEWTON RIGG,54.67,-2.788,Mild Rain,Mild,Sunny
+1912-07-31,NEWTON RIGG,54.67,-2.788,Drizzle,Mild,Sunny
+1912-08-31,NEWTON RIGG,54.67,-2.788,Mild Rain,Cool,Partially Overcast
+1912-09-30,NEWTON RIGG,54.67,-2.788,Drizzle,Cool,Sunny
+1912-10-31,NEWTON RIGG,54.67,-2.788,Mild Rain,Cool,Sunny
+1912-11-30,NEWTON RIGG,54.67,-2.788,Mild Rain,Cool,Partially Overcast
+1912-12-31,NEWTON RIGG,54.67,-2.788,Mild Rain,Cool,Partially Overcast
+1912-01-31,STONYHURST,53.845,-2.47,Mild Rain,Cool,Partially Overcast
+1912-02-29,STONYHURST,53.845,-2.47,Drizzle,Cool,Partially Overcast
+1912-03-31,STONYHURST,53.845,-2.47,Mild Rain,Cool,Partially Overcast
+1912-04-30,STONYHURST,53.845,-2.47,Drizzle,Cool,Sunny
+1912-05-31,STONYHURST,53.845,-2.47,Drizzle,Cool,Sunny
+1912-06-30,STONYHURST,53.845,-2.47,Mild Rain,Mild,Partially Overcast
+1912-07-31,STONYHURST,53.845,-2.47,Mild Rain,Mild,Sunny
+1912-08-31,STONYHURST,53.845,-2.47,Mild Rain,Cool,Partially Overcast
+1912-09-30,STONYHURST,53.845,-2.47,Mild Rain,Cool,Sunny
+1912-10-31,STONYHURST,53.845,-2.47,Mild Rain,Cool,Partially Overcast
+1912-11-30,STONYHURST,53.845,-2.47,Mild Rain,Cool,Partially Overcast
+1912-12-31,STONYHURST,53.845,-2.47,Mild Rain,Cool,Partially Overcast
+1912-01-31,RHYL,53.314,-3.501,Drizzle,Cool,Partially Overcast
+1912-02-29,RHYL,53.314,-3.501,Drizzle,Cool,Partially Overcast
+1912-03-31,RHYL,53.314,-3.501,Drizzle,Cool,Sunny
+1912-04-30,RHYL,53.314,-3.501,Dry,Cool,Sunny
+1912-05-31,RHYL,53.314,-3.501,Dry,Cool,Sunny
+1912-06-30,RHYL,53.314,-3.501,Mild Rain,Mild,Sunny
+1912-07-31,RHYL,53.314,-3.501,Mild Rain,Mild,Sunny
+1912-08-31,RHYL,53.314,-3.501,Mild Rain,Mild,Sunny
+1912-09-30,RHYL,53.314,-3.501,Drizzle,Cool,Sunny
+1912-10-31,RHYL,53.314,-3.501,Drizzle,Cool,Sunny
+1912-11-30,RHYL,53.314,-3.501,Drizzle,Cool,Partially Overcast
+1912-12-31,RHYL,53.314,-3.501,Drizzle,Cool,Partially Overcast
+1912-01-31,"SWANSEA, VICTORIA PARK",51.612,-3.962,Mild Rain,Cool,Partially Overcast
+1912-02-29,"SWANSEA, VICTORIA PARK",51.612,-3.962,Mild Rain,Cool,Partially Overcast
+1912-03-31,"SWANSEA, VICTORIA PARK",51.612,-3.962,Mild Rain,Cool,Partially Overcast
+1912-04-30,"SWANSEA, VICTORIA PARK",51.612,-3.962,Dry,Cool,Sunny
+1912-05-31,"SWANSEA, VICTORIA PARK",51.612,-3.962,Drizzle,Mild,Sunny
+1912-06-30,"SWANSEA, VICTORIA PARK",51.612,-3.962,Mild Rain,Mild,Sunny
+1912-07-31,"SWANSEA, VICTORIA PARK",51.612,-3.962,Mild Rain,Mild,Sunny
+1912-08-31,"SWANSEA, VICTORIA PARK",51.612,-3.962,Heavy Rain,Mild,Partially Overcast
+1912-09-30,"SWANSEA, VICTORIA PARK",51.612,-3.962,Dry,Mild,Sunny
+1912-10-31,"SWANSEA, VICTORIA PARK",51.612,-3.962,Mild Rain,Cool,Partially Overcast
+1912-11-30,"SWANSEA, VICTORIA PARK",51.612,-3.962,Mild Rain,Cool,Partially Overcast
+1912-12-31,"SWANSEA, VICTORIA PARK",51.612,-3.962,Mild Rain,Cool,Partially Overcast
+1912-01-31,BATH,51.386,-2.355,Mild Rain,Cool,Partially Overcast
+1912-02-29,BATH,51.386,-2.355,Drizzle,Cool,Partially Overcast
+1912-03-31,BATH,51.386,-2.355,Mild Rain,Cool,Sunny
+1912-04-30,BATH,51.386,-2.355,Dry,Cool,Sunny
+1912-05-31,BATH,51.386,-2.355,Drizzle,Mild,Sunny
+1912-06-30,BATH,51.386,-2.355,Mild Rain,Mild,Sunny
+1912-07-31,BATH,51.386,-2.355,Mild Rain,Mild,Sunny
+1912-08-31,BATH,51.386,-2.355,Mild Rain,Mild,Sunny
+1912-09-30,BATH,51.386,-2.355,Dry,Mild,Sunny
+1912-10-31,BATH,51.386,-2.355,Mild Rain,Cool,Sunny
+1912-11-30,BATH,51.386,-2.355,Drizzle,Cool,Partially Overcast
+1912-12-31,BATH,51.386,-2.355,Mild Rain,Cool,Partially Overcast
+1912-01-31,TEIGNMOUTH,50.545,-3.495,Mild Rain,Cool,Partially Overcast
+1912-02-29,TEIGNMOUTH,50.545,-3.495,Mild Rain,Cool,Sunny
+1912-03-31,TEIGNMOUTH,50.545,-3.495,Mild Rain,Cool,Sunny
+1912-04-30,TEIGNMOUTH,50.545,-3.495,Dry,Cool,Sunny
+1912-05-31,TEIGNMOUTH,50.545,-3.495,Dry,Mild,Sunny
+1912-06-30,TEIGNMOUTH,50.545,-3.495,Mild Rain,Mild,Sunny
+1912-07-31,TEIGNMOUTH,50.545,-3.495,Drizzle,Mild,Sunny
+1912-08-31,TEIGNMOUTH,50.545,-3.495,Mild Rain,Mild,Sunny
+1912-09-30,TEIGNMOUTH,50.545,-3.495,Dry,Mild,Sunny
+1912-10-31,TEIGNMOUTH,50.545,-3.495,Mild Rain,Cool,Sunny
+1912-11-30,TEIGNMOUTH,50.545,-3.495,Drizzle,Cool,Partially Overcast
+1912-12-31,TEIGNMOUTH,50.545,-3.495,Mild Rain,Cool,Partially Overcast
+1912-01-31,"PENZANCE, PENLEE GARDENS",50.118,-5.543,Mild Rain,Cool,Sunny
+1912-02-29,"PENZANCE, PENLEE GARDENS",50.118,-5.543,Mild Rain,Cool,Sunny
+1912-03-31,"PENZANCE, PENLEE GARDENS",50.118,-5.543,Mild Rain,Cool,Sunny
+1912-04-30,"PENZANCE, PENLEE GARDENS",50.118,-5.543,Dry,Cool,Sunny
+1912-05-31,"PENZANCE, PENLEE GARDENS",50.118,-5.543,Drizzle,Mild,Sunny
+1912-06-30,"PENZANCE, PENLEE GARDENS",50.118,-5.543,Mild Rain,Mild,Sunny
+1912-07-31,"PENZANCE, PENLEE GARDENS",50.118,-5.543,Mild Rain,Mild,Sunny
+1912-08-31,"PENZANCE, PENLEE GARDENS",50.118,-5.543,Heavy Rain,Mild,Sunny
+1912-09-30,"PENZANCE, PENLEE GARDENS",50.118,-5.543,Dry,Mild,Sunny
+1912-10-31,"PENZANCE, PENLEE GARDENS",50.118,-5.543,Mild Rain,Cool,Sunny
+1912-11-30,"PENZANCE, PENLEE GARDENS",50.118,-5.543,Mild Rain,Cool,Partially Overcast
+1912-12-31,"PENZANCE, PENLEE GARDENS",50.118,-5.543,Mild Rain,Cool,Sunny
+1912-01-31,"COVENTRY, CITY HOSPITAL",52.414,-1.506,Mild Rain,Cool,Partially Overcast
+1912-02-29,"COVENTRY, CITY HOSPITAL",52.414,-1.506,Drizzle,Cool,Partially Overcast
+1912-03-31,"COVENTRY, CITY HOSPITAL",52.414,-1.506,Mild Rain,Cool,Sunny
+1912-04-30,"COVENTRY, CITY HOSPITAL",52.414,-1.506,Dry,Cool,Sunny
+1912-05-31,"COVENTRY, CITY HOSPITAL",52.414,-1.506,Mild Rain,Mild,Sunny
+1912-06-30,"COVENTRY, CITY HOSPITAL",52.414,-1.506,Mild Rain,Mild,Sunny
+1912-07-31,"COVENTRY, CITY HOSPITAL",52.414,-1.506,Drizzle,Mild,Sunny
+1912-08-31,"COVENTRY, CITY HOSPITAL",52.414,-1.506,Mild Rain,Mild,Sunny
+1912-09-30,"COVENTRY, CITY HOSPITAL",52.414,-1.506,Dry,Mild,Sunny
+1912-10-31,"COVENTRY, CITY HOSPITAL",52.414,-1.506,Drizzle,Cool,Sunny
+1912-11-30,"COVENTRY, CITY HOSPITAL",52.414,-1.506,Drizzle,Cool,Partially Overcast
+1912-12-31,"COVENTRY, CITY HOSPITAL",52.414,-1.506,Mild Rain,Cool,Partially Overcast
+1912-01-31,"ABERYSTWYTH, CORPORATION YARD",52.412,-4.083,Drizzle,Cool,Sunny
+1912-02-29,"ABERYSTWYTH, CORPORATION YARD",52.412,-4.083,Drizzle,Cool,Sunny
+1912-03-31,"ABERYSTWYTH, CORPORATION YARD",52.412,-4.083,Mild Rain,Cool,Partially Overcast
+1912-04-30,"ABERYSTWYTH, CORPORATION YARD",52.412,-4.083,Dry,Cool,Sunny
+1912-05-31,"ABERYSTWYTH, CORPORATION YARD",52.412,-4.083,Dry,Cool,Sunny
+1912-06-30,"ABERYSTWYTH, CORPORATION YARD",52.412,-4.083,Mild Rain,Mild,Sunny
+1912-07-31,"ABERYSTWYTH, CORPORATION YARD",52.412,-4.083,Drizzle,Mild,Sunny
+1912-08-31,"ABERYSTWYTH, CORPORATION YARD",52.412,-4.083,Mild Rain,Mild,Sunny
+1912-09-30,"ABERYSTWYTH, CORPORATION YARD",52.412,-4.083,Dry,Cool,Sunny
+1912-10-31,"ABERYSTWYTH, CORPORATION YARD",52.412,-4.083,Mild Rain,Cool,Sunny
+1912-11-30,"ABERYSTWYTH, CORPORATION YARD",52.412,-4.083,Mild Rain,Cool,Partially Overcast
+1912-12-31,"ABERYSTWYTH, CORPORATION YARD",52.412,-4.083,Mild Rain,Cool,Partially Overcast
+1912-01-31,"COLWYN BAY, COUNCIL OFFICES",53.295,-3.73,Drizzle,Cool,Sunny
+1912-02-29,"COLWYN BAY, COUNCIL OFFICES",53.295,-3.73,Drizzle,Cool,Sunny
+1912-03-31,"COLWYN BAY, COUNCIL OFFICES",53.295,-3.73,Mild Rain,Cool,Sunny
+1912-04-30,"COLWYN BAY, COUNCIL OFFICES",53.295,-3.73,Dry,Cool,Sunny
+1912-05-31,"COLWYN BAY, COUNCIL OFFICES",53.295,-3.73,Dry,Cool,Sunny
+1912-06-30,"COLWYN BAY, COUNCIL OFFICES",53.295,-3.73,Mild Rain,Mild,Sunny
+1912-07-31,"COLWYN BAY, COUNCIL OFFICES",53.295,-3.73,Mild Rain,Mild,Sunny
+1912-08-31,"COLWYN BAY, COUNCIL OFFICES",53.295,-3.73,Mild Rain,Mild,Sunny
+1912-09-30,"COLWYN BAY, COUNCIL OFFICES",53.295,-3.73,Dry,Cool,Sunny
+1912-10-31,"COLWYN BAY, COUNCIL OFFICES",53.295,-3.73,Mild Rain,Cool,Sunny
+1912-11-30,"COLWYN BAY, COUNCIL OFFICES",53.295,-3.73,Drizzle,Cool,Partially Overcast
+1912-12-31,"COLWYN BAY, COUNCIL OFFICES",53.295,-3.73,Drizzle,Cool,Partially Overcast
+1912-01-31,"TORQUAY, CARY GREEN",50.461,-3.526,Mild Rain,Cool,Sunny
+1912-02-29,"TORQUAY, CARY GREEN",50.461,-3.526,Mild Rain,Cool,Sunny
+1912-03-31,"TORQUAY, CARY GREEN",50.461,-3.526,Mild Rain,Cool,Sunny
+1912-04-30,"TORQUAY, CARY GREEN",50.461,-3.526,Dry,Cool,Sunny
+1912-05-31,"TORQUAY, CARY GREEN",50.461,-3.526,Dry,Mild,Sunny
+1912-06-30,"TORQUAY, CARY GREEN",50.461,-3.526,Mild Rain,Mild,Sunny
+1912-07-31,"TORQUAY, CARY GREEN",50.461,-3.526,Drizzle,Mild,Sunny
+1912-08-31,"TORQUAY, CARY GREEN",50.461,-3.526,Mild Rain,Mild,Sunny
+1912-09-30,"TORQUAY, CARY GREEN",50.461,-3.526,Dry,Mild,Sunny
+1912-10-31,"TORQUAY, CARY GREEN",50.461,-3.526,Mild Rain,Cool,Sunny
+1912-11-30,"TORQUAY, CARY GREEN",50.461,-3.526,Drizzle,Cool,Partially Overcast
+1912-12-31,"TORQUAY, CARY GREEN",50.461,-3.526,Mild Rain,Cool,Partially Overcast
