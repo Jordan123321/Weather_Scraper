@@ -1,64 +1,88 @@
 #!/usr/bin/env python3
+
 """
-Weather ReadIn Runner Script
-
-This script runs the Weather_ReadIn.py script for multiple years concurrently using a ProcessPoolExecutor.
-It provides a way to process weather data for multiple years in parallel and print the results.
-
-Usage:
-python weather_readin_runner.py
-
-Dependencies:
-os, subprocess, time, concurrent.futures
+Multi-processes the script Call_Weather_ReadIn_MultiCore.py to process data for each month
+between January 2011 and December 2021. Uses the concurrent.futures module to create a pool
+of worker processes. Each worker process calls Call_Weather_ReadIn_MultiCore.py with a
+specific year and month as command-line arguments.
 """
 
 import os
+import concurrent.futures as cft
+from itertools import product
 import subprocess
 import time
-from concurrent.futures import ProcessPoolExecutor, as_completed
-from typing import Union
+from typing import Tuple
 
-def run_weather_readin(year: Union[int, str]) -> str:
+def worker(year_month: Tuple[int, int]) -> Tuple[int, int, float]:
     """
-    Run the Weather_ReadIn.py script for the given year and return the processing time and output.
+    Worker function to process data for a specific year and month.
 
     Args:
-        year (Union[int, str]): The year to process.
+    year_month: A tuple containing the year and month.
 
     Returns:
-        str: A string containing the processing time and output for the given year.
+    A tuple with year, month, and elapsed time for the process.
     """
-    if not isinstance(year, (int, str)):
-        raise ValueError("Year must be an integer or a string.")
+    year, month = year_month
+    assert isinstance(year, int), "Year must be an integer."
+    assert isinstance(month, int), "Month must be an integer."
+    assert 1 <= month <= 12, "Month must be between 1 and 12."
 
-    year = str(year)
-    start_time = time.perf_counter()
-    script_path = os.path.join(os.getcwd(), "Weather_ReadIn.py")
-    result = subprocess.run(["python", script_path, year], capture_output=True, text=True)
-    end_time = time.perf_counter()
-    elapsed_time = end_time - start_time
-    return f"Processing year {year}:\n{result.stdout}\nElapsed time: {elapsed_time:.2f} seconds\n"
+    print(f"Processing data for {year}-{month:02d}...")
+    start = time.time()
 
-def print_result(future):
+    # Get the current working directory
+    cwd = os.getcwd()
+
+    # Create file paths for stdout and stderr
+    stdout_file = os.path.join(cwd, f'log/stdout_{year}_{month}.log')
+    stderr_file = os.path.join(cwd, f'log/stderr_{year}_{month}.log')
+
+    with open(stdout_file, 'w') as out, open(stderr_file, 'w') as err:
+        # Call the original script with subprocess and pass year and month as arguments
+        script_path = os.path.join(cwd, 'Call_Weather_ReadIn_MultiCore.py')
+        subprocess.call(['python', script_path, str(year), str(month).zfill(2)], stdout=out, stderr=err)
+
+    end = time.time()
+    elapsed_time = end - start
+    print(f"Finished processing data for {year}-{month:02d} in {elapsed_time:.2f} seconds.")
+
+    return (year, month, elapsed_time)
+
+def print_result(future: cft.Future) -> None:
     """
-    Print the result of a completed future.
+    Callback function to print the result of a completed task.
 
     Args:
-        future (concurrent.futures.Future): The completed future.
+    future: A Future object representing the completed task.
+
+    Returns:
+    None
     """
-    print(future.result())
+    year, month, elapsed_time = future.result()
+    print(f"Task completed: {year}-{month:02d}, elapsed time: {elapsed_time:.2f} seconds.")
 
 if __name__ == "__main__":
-    script_path = os.path.join(os.getcwd(), "Station_ReadIn.py")
-    subprocess.run(["python", script_path])
-    num_cores = os.cpu_count() - 1
-    years = range(1900, 2022)
+    """
+    Main function to start worker processes.
 
-    # Create a ProcessPoolExecutor with a specified number of worker processes.
-    with ProcessPoolExecutor(max_workers=num_cores) as executor:
-        # Submit the run_weather_readin function with each year as an argument and store the resulting futures.
-        futures = {executor.submit(run_weather_readin, year): year for year in years}
-        # Iterate through the completed futures as they become available.
-        for future in as_completed(futures):
-            # Add the print_result function as a callback to each completed future.
+    Args:
+    None
+
+    Returns:
+    None
+    """
+    # Prepare a list of (year, month) tuples for each month between 2011 and 2021
+    year_month_pairs = list(product(range(2019, 2021), range(1, 4)))
+
+    # Get number of cores - 1
+    n_cores = os.cpu_count() - 1 if os.cpu_count() > 1 else 1
+
+    # Create a pool of workers and a list to hold the Future objects
+    with cft.ProcessPoolExecutor(max_workers=n_cores) as executor:
+        # Use the worker function to process each (year, month) pair
+        futures = {executor.submit(worker, pair) for pair in year_month_pairs}
+
+        for future in cft.as_completed(futures):
             future.add_done_callback(print_result)
